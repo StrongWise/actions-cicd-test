@@ -1,0 +1,24 @@
+name: UnitTest # 액션 이름
+on: # 액션 시작 조건 main branch에 push, PR 발생시
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest # 실행환경
+    steps:
+      - uses: actions/checkout@v2     # 1. checkout
+      - name: Install Python 3        # 2. Install
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.12'
+      - name: Install dependencies    # 3. Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests with pytest   # 4. Run tests
+        run: pytest tests
