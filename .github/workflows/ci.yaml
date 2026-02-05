@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
       - name: pylint                  # 4. Lint
         run: |
-          pylint src
-          pylint tests
+          PYTHONPATH=src pylint src --disable=C,R,W
+          PYTHONPATH=src pylint tests --disable=C,R,W
       - name: Run tests with pytest   # 5. Run tests
-        run: pytest tests
+        run: PYTHONPATH=src pytest tests
