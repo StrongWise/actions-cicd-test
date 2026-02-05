@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments (현재 프로젝트 폴더 안의 venv 제외)
+venv/
+.env
+
+# IntelliJ IDEA 설정 파일 (개인 설정이 포함될 수 있음)
+.idea/
+*.iml
+out/
+
+# macOS 시스템 파일
+.DS_Store
