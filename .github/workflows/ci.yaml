@@ -6,7 +6,6 @@ on: # 액션 시작 조건 main branch에 push, PR 발생시
   pull_request:
     branches:
       - main
-workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest # 실행환경
